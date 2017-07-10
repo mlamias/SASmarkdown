@@ -1,0 +1,14 @@
+Package: SASmarkdown
+Version: 0.3.3
+Date: 2017-07-10
+Title: 'SAS' Markdown
+Description: Settings and functions to extend the 'knitr' 'SAS' engine.
+Imports: knitr
+Suggests: rmarkdown
+BuildVignettes: yes
+VignetteBuilder: knitr
+SystemRequirements: SAS
+Author: Doug Hemken <dehemken@wisc.edu>
+Maintainer: Doug Hemken <dehemken@wisc.edu>
+License: MIT + file LICENSE
+RoxygenNote: 6.0.1
