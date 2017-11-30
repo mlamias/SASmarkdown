@@ -1,6 +1,6 @@
 
 .onLoad <- function (libname, pkgname) {
-    utils::globalVariables("hook_orig") # to suppress CHECK note
+    utils::globalVariables(c("oautoexec","hook_orig")) # to suppress CHECK note
 }
 
 .onAttach <- function (libname, pkgname) {
@@ -15,7 +15,7 @@
             options
     })
     
-    # sas_collectcode()
+    sas_collectcode()
     # saslog_hookset()
     
     packageStartupMessage("sas, saslog, sashtml, and sashtmllog engines")

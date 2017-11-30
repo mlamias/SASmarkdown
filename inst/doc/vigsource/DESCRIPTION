@@ -1,6 +1,6 @@
 Package: SASmarkdown
-Version: 0.3.3
-Date: 2017-07-10
+Version: 0.4.3
+Date: 2017-11-30
 Title: 'SAS' Markdown
 Description: Settings and functions to extend the 'knitr' 'SAS' engine.
 Imports: knitr
