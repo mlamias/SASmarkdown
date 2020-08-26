@@ -8,7 +8,7 @@ sashtml <- function (options) {
       }
     listf <- sub("[.]sas$", ".lst", f)
     logf <- sub("[.]sas$", ".log", f)
-    htmlf <- sub("[.]sas$", ".html", f)
+    htmlf <- sub("[.]sas$", ".pdf", f)
     if (is.null(options$saveSAS) || options$saveSAS==FALSE) 
         on.exit(unlink(c(htmlf, logf, listf, f)), add = TRUE)
     
@@ -19,7 +19,7 @@ sashtml <- function (options) {
     odsinit <- c("ods noproctitle;",
                  "ods listing close;",
                  paste("ods graphics", glabel, ";"),
-                 paste("ods html gpath='", gpath, "'", 
+                 paste("ods pdf gpath='", gpath, "'", 
                        "file='", htmlf,
                        "' (no_top_matter no_bottom_matter) style=journal;"
                  )
@@ -55,8 +55,8 @@ sashtml <- function (options) {
   out.log <- out.log[-(1:grep("NOTE: Writing HTML Body file: ", out.log))]
   
   if (options$engine == "sashtml" && is.null(attr(out, "status"))) {
-      return(sas_output(options, options$code, out.html))
+      return(sas_output(options, options$code, out.pdf))
   } else {
-      return(sas_output(options, out.log, out.html))
+      return(sas_output(options, out.log, out.pdf))
   }
 }
