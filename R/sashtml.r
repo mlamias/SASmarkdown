@@ -55,8 +55,8 @@ sashtml <- function (options) {
  
   
   if (options$engine == "sashtml" && is.null(attr(out, "status"))) {
-      return(sas_output(options, options$code, out.pdf))
+      return(sas_output(options, options$code, out.html))
   } else {
-      return(sas_output(options, out.log, out.pdf))
+      return(sas_output(options, out.log, out.html))
   }
 }
